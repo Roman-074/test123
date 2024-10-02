@@ -6,9 +6,19 @@
         <title>FryLab</title>
         <link type="text/css" rel="stylesheet" href="styles.css">
         <script src="https://telegram.org/js/telegram-web-app.js"></script>
-        <script src="skiko.js"> </script>
+<!--        <script src="skiko.js"> </script>-->
     </head>
     <body>
+    <script>
+        window.addEventListener('DOMContentLoaded', (event) => {
+            if (typeof Telegram !== 'undefined' && Telegram.WebApp) {
+                console.log("Telegram Web App API доступен.");
+                Telegram.WebApp.ready();
+            } else {
+                console.error("Не удалось получить доступ к Telegram Web App API.");
+            }
+        });
+    </script>
     <script type="application/javascript" src="composeApp.js"></script>
 <!--        <canvas id="ComposeTarget"></canvas>-->
 <!--        <script src="glassOfWater.js"> </script>-->
