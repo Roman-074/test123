@@ -13,21 +13,15 @@
         <script type="application/javascript" src="composeApp.js"></script>
 
         <script>
-            // Дожидаемся загрузки DOM
             document.addEventListener("DOMContentLoaded", function () {
-                // Проверяем, доступен ли объект Telegram WebApp
                 if (window.Telegram && window.Telegram.WebApp) {
-                    // Инициализируем объект WebApp
                     const webApp = window.Telegram.WebApp;
 
-                    // Получаем initDataUnsafe и queryId
                     const initDataUnsafe = webApp.initDataUnsafe;
 
-                    // Проверяем, есть ли queryId
                     if (initDataUnsafe && initDataUnsafe.query_id) {
                         const queryId = initDataUnsafe.query_id;
                         alert("Query ID: " + queryId);
-                        // Выводим queryId на страницу или используем как нужно
                         document.body.innerHTML += `<p>Query ID: ${queryId}</p>`;
                     } else {
                          alert("Query ID not found");
