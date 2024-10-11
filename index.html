@@ -11,25 +11,5 @@
     <body>
         <canvas id="ComposeTarget"></canvas>
         <script type="application/javascript" src="composeApp.js"></script>
-
-        <script>
-            document.addEventListener("DOMContentLoaded", function () {
-                if (window.Telegram && window.Telegram.WebApp) {
-                    const webApp = window.Telegram.WebApp;
-
-                    const initDataUnsafe = webApp.initDataUnsafe;
-
-                    if (initDataUnsafe && initDataUnsafe.query_id) {
-                        const queryId = initDataUnsafe.query_id;
-                        alert("Query ID: " + queryId);
-                        document.body.innerHTML += `<p>Query ID: ${queryId}</p>`;
-                    } else {
-                         alert("Query ID not found");
-                    }
-                } else {
-                    alert("Telegram WebApp is not available");
-                }
-            });
-        </script>
     </body>
 </html>
